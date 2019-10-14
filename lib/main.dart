@@ -1,35 +1,47 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(myApp());
+void main() => runApp(MyApp());
 
-class myApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new MaterialApp(
-        title: 'grid view and img',
-        home: new Scaffold(
-            body: new Center(
-          child: new ListView(
-            scrollDirection: Axis.horizontal,
-            semanticChildCount: 3,
-            children: <Widget>[
-              new Image.network(
-                  'https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2561542089.jpg'),
-              new Image.network(
-                  'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2553320254.jpg'),
-              new Image.network(
-                  'https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2569548689.jpg'),
-              new Image.network(
-                  'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2565435561.jpg'),
-              new Image.network(
-                  'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2548995606.jpg'),
-              new Image.network(
-                  'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2565877341.jpg'),
-              new Image.network(
-                  'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2565751382.jpg')
-            ],
-          ),
-        )));
+    var card = new Card(
+        child: Column(children: <Widget>[
+      ListTile(
+        title: new Text('卡片组件布局'),
+        subtitle: new Text('card wight'),
+        leading: new Icon(
+          Icons.card_giftcard,
+          color: Colors.blue,
+        ),
+      ),
+      new Divider(),
+      ListTile(
+        title: new Text('列表组件布局'),
+        subtitle: new Text('list wight'),
+        leading: new Icon(
+          Icons.card_giftcard,
+          color: Colors.blue,
+        ),
+      ),
+      ListTile(
+        title: new Text('层叠组件布局'),
+        subtitle: new Text('stack wight'),
+        leading: new Icon(
+          Icons.card_giftcard,
+          color: Colors.blue,
+        ),
+      ),
+    ]));
+    return MaterialApp(
+      title: 'ListView wight',
+      home: Scaffold(
+        appBar: new AppBar(
+          title: new Text('卡片布局'),
+        ),
+        body: Center(child: card),
+      ),
+    );
   }
 }
