@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'bottom_navigation_widget.dart';
+import 'package:my_app/pages/TabBarBottomPageWidget.dart';
 
 void main() => runApp(new MyApp());
 
@@ -10,7 +10,31 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '底部导航栏',
       theme: ThemeData.light(),
-      home: BottomNavigationWidget(),
+      home: MainPage(),
+    );
+  }
+}
+
+class MainPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("flutter demo"),
+      ),
+      body: new Column(
+        children: <Widget>[
+          new FlatButton(
+              color: Colors.blue,
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (context) => new TabBarBottomPageWidget()));
+              },
+              child: new Text("Bottom Tab")),
+        ],
+      ),
     );
   }
 }
