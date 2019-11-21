@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/pages/TabBarBottomPageWidget.dart';
+import 'package:my_app/pages/login/login_page.dart';
 
 void main() => runApp(new MyApp());
 
@@ -30,7 +30,7 @@ class MainPage extends StatelessWidget {
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (context) => new TabBarBottomPageWidget()));
+                        builder: (context) => new LoginPage()));
               },
               child: new Text("Bottom Tab")),
         ],
